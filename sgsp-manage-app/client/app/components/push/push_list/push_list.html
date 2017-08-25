@@ -1,0 +1,36 @@
+<h2 class="sub-header col-xs-8 pd-right-0 pd-left-0">Push 관리</h2>
+
+
+<div class="col-xs-2 pd-0 align-right right width-10">
+  <button type="button" class="btn btn-pink" data-ui-sref="push_send_new">메시지 작성</button>
+</div>
+<div class="table-responsive col-xs-12 pd-0">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>상태</th>
+      <th>전송내용</th>
+      <th>실패이유</th>
+      <th>변경일시</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-if="listData.total <= 0">
+      <td colspan="5">조회결과가 없습니다.</td>
+    </tr>
+    <tr ng-repeat="item in listData.list" style="cursor:pointer;" ng-click="_go(item.id)">
+      <td>{{item.id}}</td>
+      <td>{{item.statusNm}}</td>
+      <td>{{item.body}}</td>
+      <td>{{item.failReason}}</td>
+      <td>{{item.lastUpdated | date:'medium'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="pagination right">
+  <div uib-pagination ng-if="listData.total>paging.max" total-items="listData.total" ng-model="paging.index"
+       items-per-page="paging.max"
+       ng-change="_onPageChanged()"></div>
+</div>

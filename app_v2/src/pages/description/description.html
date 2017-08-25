@@ -1,0 +1,42 @@
+<!--
+  Generated template for the Description page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="transparent">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding class="background-page header_transparent">
+  <div class="bg_img">
+    <img src="assets/images/bg.png" class="opacity"/>
+  </div>
+  <div class="description_content">
+    <h1><img src="assets/images/logo_white.png"/></h1>
+
+    <p class="font-m gray top_text">상황을 다르게 생각하면 <br/> 힘든 감정도 다스릴 수 있습니다.</p>
+    <img src="assets/images/ic_info.png" class="ci_info"/>
+
+    <p class="font-l info">" 나와같은 상황에서 <br/>모두가 나와같은 기분을 느낄까? "</p>
+
+    <p class="font-l btm_text"><img src="assets/images/logo_s.png"/> 은 상황을 다르게 생각할 수<br/> 있도록 서로를 돋는 곳입니다.</p>
+
+    <!--
+    <div>
+      <button ion-button color="basics" (click)="goToUserselection()" class="btn-style1">다음</button>
+    </div>
+    -->
+    <form [formGroup]="form" *ngIf="settingsReady">
+      <ion-item class="check">
+        <ion-checkbox color="dark" checked="false" formControlName="initDescription"></ion-checkbox>
+        <ion-label class="gray">다시 보기 않기</ion-label>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>

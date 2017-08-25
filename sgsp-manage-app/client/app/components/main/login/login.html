@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+
+<div class="container">
+  <div class="wrapper col-xs-12">
+    <form role="form" class="col-xs-offset-3 col-xs-6 login_box" name="inputForm" ng-submit="login()" novalidate>
+      <h3 class="form-signin-heading"><i>Spring Admin!</i> <br/><span>LOGIN</span></h3>      
+      <label for="id" class="sr-only">아이디</label>
+      <input type="text" id="id" name="id" class="form-control" placeholder="아이디" ng-model="id" required autofocus>
+      <label for="password" class="sr-only">비밀번호</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호" ng-model="password" required>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me" ng-model="save">아이디저장
+        </label>
+      </div>
+      <button class="btn btn-lg btn-block btn-sub" name="Submit" value="Login" type="Submit">로그인</button>       
+      <br/>
+      <div ng-if="inputForm.$submitted && inputForm.$invalid" class="alert alert-danger" role="alert">
+        <span ng-show="inputForm.id.$error.required">[이메일]필수항목입니다.</span>
+        <span ng-show="inputForm.password.$error.required">[비밀번호]필수항목입니다.</span>
+      </div>
+    </form>
+  </div>
+</div>

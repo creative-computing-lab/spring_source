@@ -1,0 +1,27 @@
+page-feed {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .scroll-content{
+    overflow-y: hidden!important;
+  }
+  .footer-ios .toolbar-ios:first-child .toolbar-background-ios {
+    border-width:0px!important;
+  }
+  .footer-md::before{
+    background-image:none!important;
+  }
+  .back-button.show-back-button{
+    margin:0px!important;
+  }
+  .ic_width {
+    min-width: 44px;
+  }
+  ion-footer {
+    bottom: 10% !important;
+  }
+}
+.btm_bottom {
+  margin-left: 6%;
+  margin-bottom: 10%;
+}

@@ -1,0 +1,48 @@
+<ion-header no-shadow>
+  <ion-navbar *ngIf="isIos" style="height:calc(44px + 20px); min-height:calc(44px + 20px); padding-top:20px;" no-border color="transparent">
+    <ion-title style="padding-top:14px !important;" class="align-center">
+      <img src="assets/images/logo_deep_pink_s.png" class="vertical-center"/>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-navbar *ngIf="!isIos" no-border color="transparent">
+    <ion-title class="align-center"><img src="assets/images/logo_deep_pink_s.png" class="vertical-center"/></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="background-page header_transparent">
+  <div class="bg_img">
+    <img src="{{backgroundImage}}" class="opacity"/>
+  </div>
+  <div class="view_content align-center">
+     <p class="opacity_08 font-23 user_info">0분전 <img src="assets/images/ic_position.png"/>0km 이내<br/>
+      본인</p>
+
+    <h1 class="font-35">{{title}}</h1>
+
+    <h2 ion-text class="font-m font-bold" color="pink">어떤 상황이었냐면...</h2>
+
+    <p class="font-m mg-btm-8">{{situations}}</p>
+
+    <h2 ion-text class="font-m font-bold" color="pink">그때 무슨 생각을 했냐면...</h2>
+
+    <p class="font-m">{{thoughts}}</p>
+
+  </div>
+  <ion-footer>
+    <ion-toolbar color="transparent" class="btm_bottom">
+      <button ion-button color="basics" class="btn-style2 mg-right-3 width-40" (click)="privateCreate()">비공개로 저장</button>
+      <button ion-button color="sub" class="btn-style2 mg-left-3 width-40" (click)="publicCreate()">공개하기</button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

@@ -1,0 +1,38 @@
+<!--
+  Generated template for the NoteWrite page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="basics">
+    <ion-title class="align-center">땡큐노트</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content>
+  <div class="thank_you_content_view">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p class="thank_you_note_view font-26">
+            {{note.body}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="align-center">
+          <button ion-button color="pink" class="btn-style3  btn1" (click)="goToFeed(note.postsId)">이야기 보기</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

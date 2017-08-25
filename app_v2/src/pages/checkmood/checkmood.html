@@ -1,0 +1,65 @@
+<!--
+  Generated template for the Checkmood page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar *ngIf="isIos" style="height:calc(44px + 20px); min-height:calc(44px + 20px); padding-top:20px;" color="basics">
+    <ion-title style="padding-top:14px !important;" class="align-center">
+      <img src="assets/images/logo_pink.png" class="vertical-center"/>
+    </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-navbar *ngIf="!isIos" color="basics">
+    <ion-title class="align-center"><img src="assets/images/logo_pink.png" class="vertical-center"/></ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="align-center checkmood_content">
+  <img src="assets/images/ic_emotion.png" class="emotion"/>
+
+  <h1 ion-text color="basics" class="font-l">내 지금 기분은?</h1>
+  <img [hidden]="!(moodValue < 33)" src="assets/images/ic_mood3.png" class="mood_icon"/>
+  <img [hidden]="!(moodValue >= 33 && moodValue < 66)" src="assets/images/ic_mood1.png" class="mood_icon"/>
+  <img [hidden]="!(moodValue >= 66)" src="assets/images/ic_mood2.png" class="mood_icon"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-range [(ngModel)]="moodValue" min="0" max="100">
+          <ion-label range-left class="font-m" color="dark">나빠요</ion-label>
+          <ion-label range-right class="font-m" color="dark">좋아요</ion-label>
+        </ion-range>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="textarea_content">
+         <ion-input *ngIf="isModify" [(ngModel)]="title" class="font-m textfield_style" [value]="title"></ion-input>
+         <ion-input *ngIf="!isModify" [(ngModel)]="title" class="font-m textfield_style" placeholder="지금 느끼는 감정을 적어보세요"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button color="gray" (click)="close()" class="white btn-style1 mg-right-2">이전</button>
+  <button ion-button color="sub" (click)="goWrite1()" class="btn-style1 mg-left-2">다음</button>
+
+</ion-content>

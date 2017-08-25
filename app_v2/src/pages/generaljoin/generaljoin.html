@@ -1,0 +1,132 @@
+<!--
+  Generated template for the Generaljoin page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="transparent">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding class="background-page header_transparent">
+  <div class="bg_img">
+    <img src="assets/images/bg2_.png" class="opacity"/>
+  </div>
+  <div class="join_content">
+    <h1><img src="assets/images/logo_white.png"/></h1>
+
+    <p class="font-23 gray">당신의 정보는 안전합니다.<br/>
+      개인정보는 더 나은 서비스를 위해 내부관리용으로만 사용되며, 절대 익명성을 보장합니다. 안심하세요!</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <ion-list class="input_style3">
+        <ion-item class="pd-0 gender">
+          <ion-label>성별</ion-label>
+          <ion-select name="gender" formControlName="gender">
+            <ion-option value="F">여자</ion-option>
+            <ion-option value="M">남자</ion-option>
+          </ion-select>
+        </ion-item>
+        <!--
+        <div *ngIf="gender.dirty && !gender.valid"  class="error_content font-s">
+          <span *ngIf="gender.errors.required" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span>
+        </div>
+        -->
+
+        <ion-item class="pd-0">
+          <ion-label>생년월일</ion-label>
+          <ion-datetime displayFormat="YYYY/MM/DD" name="birthday" formControlName="birthday"></ion-datetime>
+        </ion-item>
+        <!--
+        <div *ngIf="birthday.dirty && !birthday.valid"  class="error_content font-s">
+          <span *ngIf="birthday.errors.required" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span>
+        </div>
+        -->
+
+        <ion-item class="pd-0">
+          <ion-input type="text" name="username" formControlName="username" placeholder="아이디"
+                     class="white"></ion-input>
+        </ion-item>
+        <div *ngIf="username.dirty && !username.valid" class="error_content font-s">
+          <span ion-text *ngIf="username.errors.required" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span><br/>
+          <span ion-text *ngIf="username.errors.id" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            아이디는 영문 및 숫자, 특수문자 조합 4자리 이상이어야 합니다.
+          </span><br/>
+          <span ion-text *ngIf="username.errors.maxLength" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            최대 길이를 초과하였습니다.
+          </span>
+        </div>
+
+        <ion-item class="pd-0">
+          <ion-input type="password" placeholder="네 자리 비밀번호" maxlength="4" class="white"
+                     reverse="true" name="password" formControlName="password" equalTo="cPassword"></ion-input>
+        </ion-item>
+        <div *ngIf="password.dirty && !password.valid" class="error_content font-s">
+          <span ion-text *ngIf="password.errors.required" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span><br/>
+          <span ion-text *ngIf="password.errors.maxLength" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            최대 길이를 초과하였습니다.
+          </span><br/>
+          <span ion-text *ngIf="password.errors.number" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            패스워드는 4자리 숫자로만 구성되어야 합니다.
+          </span>
+        </div>
+
+        <ion-item class="pd-0">
+          <ion-input type="password" placeholder="비밀번호 확인" maxlength="4" class="white"
+                     reverse="false" name="cPassword" formControlName="cPassword" equalTo="password"></ion-input>
+        </ion-item>
+        <div *ngIf="cPassword.dirty && !cPassword.valid" class="error_content font-s">
+          <span ion-text *ngIf="cPassword.errors" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            입력하신 두 개의 비밀번호가 일치하지 않습니다.
+          </span>
+        </div>
+
+        <ion-item class="pd-0">
+          <ion-input type="text" name="recommendationCode" formControlName="recommendationCode"
+                     placeholder="추천인 인증 코드 입력" class=" white"></ion-input>
+        </ion-item>
+
+        <div *ngIf="recommendationCode.dirty && !recommendationCode.valid" class="error_content font-s">
+          <span ion-text *ngIf="recommendationCode.errors?.required" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span><br/>
+          <span ion-text *ngIf="recommendationCode.errors?.minlength" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            4자 이상 입력하여 주세요.
+          </span><br/>
+          <span ion-text *ngIf="recommendationCode.errors?.code" color="danger">
+            <ion-icon name="alert"></ion-icon>
+            유효하지 않은 코드 입니다.
+          </span>
+        </div>
+
+      </ion-list>
+      <div class="mg-top-6">
+        <button ion-button color="basics" class="btn-style1" type="submit">시작하기</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

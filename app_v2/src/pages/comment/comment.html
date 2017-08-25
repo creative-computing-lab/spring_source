@@ -1,0 +1,91 @@
+<!--
+  Generated template for the Comment page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="basics">
+    <ion-title class="align-center">댓글</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding [ngClass]="(isCounselor || isOwner)?'input_comment':''">
+  <ion-list class="comment-list">
+    <ion-item *ngFor="let comment of comments" class="pd-0">
+      <ion-row class="comment-text">
+        <ion-col>
+          <span ion-text color="sub" *ngIf="comment.username">{{comment.username}}</span>
+          <h3 class="font-25 overflow-none">{{comment.body}}</h3>
+         <p class="font-s">{{comment.lastUpdated}}
+           <span [hidden]="!comment.isRecomm" (click)="cancelRecomm(comment.id)">공감<img src="assets/images/ic_sympathy_pink.png" class="vertical-center"/></span>
+           <span [hidden]="comment.isRecomm" (click)="recomm(comment.id)">공감<img src="assets/images/ic_sympathy_gray1.png" class="vertical-center"/></span>
+           {{comment.recommTotal}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-icon *ngIf="comment.sprout=='able'" item-right (click)="openThinkChangeModal(comment.id)" class="mg-right-4 align-right">
+        <img src="assets/images/ic_bud_gray.png"/>
+      </ion-icon>
+      <ion-icon *ngIf="comment.sprout=='done'" item-right class="mg-right-4 align-right">
+        <img src="assets/images/ic_bud_green.png"/>
+      </ion-icon>
+    </ion-item>
+    <button ion-button clear full class="font-1" *ngIf="commentTotal != comments.length" (click)="getCommentList(comments.length)">
+      <p ion-text color="gray">더보기</p><ion-icon name="arrow-down"></ion-icon>
+    </button>
+  </ion-list>
+  <ion-grid *ngIf="comments.length==0">
+    <ion-row>
+      <ion-col class="align-center no-comment">
+        <!-- <img src="assets/images/logo_gray.png"> -->
+        <ion-icon name="alert" color="gray"></ion-icon>
+        <h2 ion-text class="font-m" color="gray1">작성된 댓글이 없습니다</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="isCounselor || isOwner">
+  <ion-toolbar class="input_cmt">
+    <ion-slides pager>
+      <ion-slide>
+        <h2 ion-text class="font-2" color="deep_gray">이 상황을 다른 관점에서 바라볼 수 있을까요?</h2>
+      </ion-slide>
+      <ion-slide>
+        <h2 ion-text class="font-2" color="deep_gray">만약 친구나 가족이 비슷한 문제를 겪고 있다면 <br/>그들에게 어떤 이야기를 해주고 싶은가요?</h2>
+      </ion-slide>
+      <ion-slide>
+        <h2 ion-text class="font-2" color="deep_gray">어떻게 행동하면 가장 긍정적인 결과를 가져올 수 있을까요?</h2>
+      </ion-slide>
+      <ion-slide>
+        <h2 ion-text class="font-2" color="deep_gray">생각과 반대되는 근거를 찾아보세요.</h2>
+      </ion-slide>
+    </ion-slides>
+    <ion-grid class="pd-top-0">
+      <ion-row>
+        <ion-col col-9 class="pd-0">
+          <ion-item class="pd-0">
+            <ion-textarea ion-text [(ngModel)]="body" (keyup)="body" maxlength="160"></ion-textarea>
+          </ion-item>
+        </ion-col>
+          <ion-col col-3 class="pd-top-5 pd-left-0 pd-right-0">
+            <button ion-button color="basics" center class="right btn-style-s" (click)="create()">
+            생각돕기
+          </button>
+        </ion-col>
+        <ion-col col-9>
+          <span ion-text class="font-23 right" color="deep_gray">{{body | TextCount:160}}/160</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

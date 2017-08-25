@@ -1,0 +1,108 @@
+page-comment-detail {
+ .scroll-content{
+    overflow-y: hidden!important;
+  }
+}
+.comment-detail-text {
+  padding:5% 8%;
+  ion-col {
+    background-color:#fafafa;
+    color:#7d7d7d;
+    padding:9% 5%;
+    height:1535px;
+    @include media("(max-width: 768px)") {
+      height:1100px!important;
+    }
+    @include media("(max-width: 640px)") {
+      height:910px!important;
+    }
+    @include media("(max-width: 480px)") {
+      height:680px!important;
+    }
+    @include media("(max-width: 414px)") {
+      height:580px!important;
+    }
+    @include media("(max-width: 412px)") {
+      height:500px!important;
+    }
+    @include media("(max-width: 375px)") {
+      height:510px!important;
+    }
+    @include media("(max-width: 360px)") {
+      height:460px!important;
+    }
+    @include media("(max-width: 320px)") {
+      height:410px!important;
+    }
+    button {
+      position: absolute;
+      top: 1340px;
+      @include media("(max-width: 768px)") {
+        top: 950px;
+      }
+      @include media("(max-width: 640px)") {
+        top: 780px;
+      }
+      @include media("(max-width: 480px)") {
+        top: 590px;
+      }
+      @include media("(max-width: 414px)") {
+        top: 500px;
+      }
+      @include media("(max-width: 412px)") {
+        top: 420px;
+      }
+      @include media("(max-width: 375px)") {
+        top: 440px;
+      }
+      @include media("(max-width: 360px)") {
+        top: 390px;
+      }
+      @include media("(max-width: 320px)") {
+        top: 350px;
+      }
+    }
+    .bud_btn {
+      left: 35%;
+      @include media("(max-width: 768px)") {
+        left:29%;
+      }
+      @include media("(max-width: 414px)") {
+        left:32%;
+      }
+      @include media("(max-width: 412px)") {
+        left:32%;
+      }
+      @include media("(max-width: 375px)") {
+        left:31%;
+      }
+      @include media("(max-width: 360px)") {
+        left:33%;
+      }
+      @include media("(max-width: 320px)") {
+        left:33%;
+      }
+    }
+    .thank_you_btn {
+      left:29.5%;
+      @include media("(max-width: 768px)") {
+        left:19.5%;
+      }
+      @include media("(max-width: 414px)") {
+        left:22%;
+      }
+      @include media("(max-width: 412px)") {
+        left:22%;
+      }
+      @include media("(max-width: 375px)") {
+        left:20%;
+      }
+      @include media("(max-width: 360px)") {
+        left:26.5%;
+      }
+      @include media("(max-width: 320px)") {
+        left:26%;
+      }
+    }
+  }
+}

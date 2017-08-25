@@ -1,0 +1,44 @@
+page-welcome {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .scroll-content{
+    overflow-y: hidden!important;
+  }
+}
+.welcome_content {
+  @extend .text_content;
+  padding-top: 19%;
+  h1 {
+    @include media("(max-width: 360px)") {
+      margin:0px;
+    }
+    img {
+      width:27.2%;
+    }
+  }
+  P {
+    margin-top: 45%;
+    margin-bottom: 58.5%;
+    @include media("(max-width: 768px)") {
+      margin-top: 40%;
+      margin-bottom: 48%;
+    }
+    @include media("(max-width: 412px)") {
+      margin-top: 35%;
+      margin-bottom: 40%;
+    }
+    @include media("(max-width: 414px)") {
+      margin-top: 40%;
+       margin-bottom: 50%;
+    }
+    @include media("(max-width: 375px)") {
+      margin-top: 40%;
+      margin-bottom: 48%;
+    }
+    @include media("(max-width: 360px)") {
+      margin-top: 45%;
+      margin-bottom: 58.5%;
+    }
+  }
+}

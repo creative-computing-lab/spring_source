@@ -1,0 +1,11 @@
+page-write2 {
+  .list-ios > .item-block:first-child {
+    border:0px!important;
+  }
+  .footer-ios .toolbar-ios:first-child .toolbar-background-ios {
+    border-width:0px!important;
+  }
+  .footer-md::before{
+    background-image:none!important;
+  }
+}

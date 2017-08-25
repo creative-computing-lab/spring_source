@@ -1,0 +1,17 @@
+page-pw-change {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .scroll-content {
+    overflow-y: hidden!important;
+  }
+  .list-ios > .item-block:first-child {
+    border-top:0px!important;
+  }
+}
+.pw_change_content {
+  @extend .login_content;
+  ion-list {
+    margin-top:20%!important;
+  }
+}

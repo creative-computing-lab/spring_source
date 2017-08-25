@@ -1,0 +1,13 @@
+<h2 class="sub-header col-xs-6 col-xs-offset-3 pd-right-0 pd-left-0 mg-top-150">부적절한 글 포스트 내용</h2>
+
+<div ng-show="!editerOpen" class="col-xs-6  col-xs-offset-3 pd-0 open-detail">
+  <div>
+    <div><b>기분 : </b>{{form.title}}</div>
+    <div><b>상황 : </b>{{form.situations}}</div>
+    <div><b>생각 : </b>{{form.thoughts}}</div>
+    <div class="btn-btm">
+      <button type="button" class="btn btn-sub" ng-click="_remove()">삭제</button>
+      <button type="button" class="btn btn-default" ng-click="_cancel()">목록으로</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+page-userselection {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .scroll-content{
+    overflow-y: hidden!important;
+  }
+}
+.userselection_content {
+  @extend .text_content;
+  padding-top: 69%;
+  .btn-group {
+    padding:0% 16%;
+    margin-top: 28.5%;
+  }
+  h1 {
+    img {
+      width:27.2%;
+    }
+  }
+}

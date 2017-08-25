@@ -1,0 +1,102 @@
+page-note-view {
+  .scroll-content{
+    overflow-y: hidden!important;
+  }
+  .button-ios {
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+.thank_you_content_view {
+  padding:6% 5%!important;
+  ion-grid {
+    height:1075px;
+    padding: 6% 2% 20% 2%;
+    background-color:#faa9b0;
+    @include media("(max-width: 768px)") {
+      height:1075px!important;
+    }
+    @include media("(max-width: 640px)") {
+      height:770px!important;
+    }
+    @include media("(max-width: 480px)") {
+      height:630px!important;
+    }
+    @include media("(max-width: 414px)") {
+      height:570px!important;
+    }
+    @include media("(max-width: 412px)") {
+      height:500px!important;
+    }
+    @include media("(max-width: 375px)") {
+      height:505px!important;
+    }
+    @include media("(max-width: 360px)") {
+      height:460px!important;
+    }
+    @include media("(max-width: 320px)") {
+      height:410px!important;
+    }
+  }
+}
+.thank_you_note_view {
+  position: absolute;
+  height:930;
+  margin:0px!important;
+  background-color:#fafafa!important;
+  padding:5% 3%;
+  color: #7d7d7d;
+  @include media("(max-width: 768px)") {
+    height:930px;
+    width:98%!important;
+  }
+  @include media("(max-width: 640px)") {
+    height:650px!important;
+    width:97.9%!important;
+  }
+  @include media("(max-width: 480px)") {
+    height:540px!important;
+    width:96.5%!important;
+  }
+  @include media("(max-width: 414px)") {
+    height:475px!important;
+  }
+  @include media("(max-width: 412px)") {
+    height:410px!important;
+  }
+  @include media("(max-width: 375px)") {
+    height:405px!important;
+  }
+  @include media("(max-width: 360px)") {
+    height:385px!important;
+  }
+  @include media("(max-width: 320px)") {
+    height:335px!important;
+  }
+}
+.btn1 {
+  top: 875px;
+  @include media("(max-width: 768px)") {
+    top: 875px;
+  }
+  @include media("(max-width: 640px)") {
+    top: 600px;
+  }
+  @include media("(max-width: 480px)") {
+    top: 500px;
+  }
+  @include media("(max-width: 414px)") {
+    top: 435px;
+  }
+  @include media("(max-width: 412px)") {
+    top: 370px;
+  }
+  @include media("(max-width: 375px)") {
+    top: 370px;
+  }
+  @include media("(max-width: 360px)") {
+    top: 350px;
+  }
+  @include media("(max-width: 320px)") {
+    top: 303px;  
+  }
+}

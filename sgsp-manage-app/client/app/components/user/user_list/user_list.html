@@ -1,0 +1,59 @@
+<h2 class="sub-header">사용자 관리</h2>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>구분</th>
+                <th>아이디</th>
+                <th>성별</th>
+                <th>성년월일</th>
+                <th>활동내역</th>
+                <th>경력</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-if="listData.total <= 0">
+                <td colspan="7">조회결과가 없습니다.</td>
+            </tr>
+            <tr ng-repeat="item in listData.list">
+                <td>{{item.id}}</td>
+                <td>{{item.userDivDesc}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.birthday}}</td>
+                <td>
+                    <span ng-if="item.userDiv=='NORMAL'">작성({{item.postsCount}})</span>
+                    <span ng-if="item.userDiv=='COUNSELOR'">도움({{item.postsCount}}), 채택({{item.sproutCount}})</span>
+                </td>
+                <td><span ng-if="item.userDiv=='COUNSELOR'">{{item.degree}}({{item.career}})</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="pagination right">
+    <div uib-pagination ng-if="listData.total>paging.max" total-items="listData.total" ng-model="paging.index" items-per-page="paging.max"
+        ng-change="_onPageChanged()"></div>
+</div>
+
+
+<!--<nav aria-label="Page navigation">
+    <ul class="pagination right">
+        <li>
+            <a href="#" aria-label="Previous pagination-sm">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>-->

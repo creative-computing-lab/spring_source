@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Write1 page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar *ngIf="isIos" style="height:calc(44px + 20px); min-height:calc(44px + 20px); padding-top:20px;" color="basics">
+    <ion-title style="padding-top:14px !important;" class="align-center">
+      <img src="assets/images/logo_pink.png" class="vertical-center"/>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-navbar *ngIf="!isIos" color="basics">
+    <ion-title class="align-center"><img src="assets/images/logo_pink.png" class="vertical-center"/></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeConfirm()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="align-center write_content1">
+  <img src="assets/images/ic_situation.png"/>
+  <ion-list>
+
+    <ion-item class="title ">
+      <h2 class="font-25 overflow">{{title}}</h2>
+    </ion-item>
+
+    <ion-item class="question_text">
+      <h2 class="font-25">어떤 상황이었냐면...</h2>
+    </ion-item>
+    <ion-item class="textarea_style2">
+      <ion-textarea *ngIf="isModify" class="font-25" [(ngModel)]="situations" (keyup)="situations" [value]="situations"
+                    maxlength="160"></ion-textarea>
+      <ion-textarea *ngIf="!isModify" class="font-25" [(ngModel)]="situations" (keyup)="situations"
+                    maxlength="160"></ion-textarea>
+    </ion-item>
+    <p ion-text class="font-23 align-right" color="deep_gray">{{situations | TextCount:160}}/160</p>
+    <ion-item class="category">
+      <ion-label color="dark">카테고리</ion-label>
+      <ion-select [(ngModel)]="postsCategory">
+        <ion-option value="STUDY" [selected]="postsCategory == STUDY">학업</ion-option>
+        <ion-option value="WORK" [selected]="postsCategory == WORK">일</ion-option>
+        <ion-option value="FAMILY" [selected]="postsCategory == FAMILY">가족</ion-option>
+        <ion-option value="LOVE" [selected]="postsCategory == LOVE">연애</ion-option>
+        <ion-option value="FRIEND" [selected]="postsCategory == FRIEND">친구</ion-option>
+        <ion-option value="PARENTING" [selected]="postsCategory == PARENTING">육아</ion-option>
+        <ion-option value="ETC" [selected]="postsCategory == ETC">기타</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="btm-btn">
+      <button ion-button color="gray" class="white btn-style1 mg-right-2" (click)="goBack()">이전</button>
+      <button ion-button color="sub" class="btn-style1 mg-left-2" (click)="goToWrite2()">다음</button>
+</div>
+</ion-content>

@@ -1,0 +1,5 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab #writeTab (ionSelect)="goWrite1()" tabTitle="글쓰기" tabIcon="add"></ion-tab>
+  <ion-tab *ngFor="let tab of tabs" [root]="tab.component" [tabTitle]="tab.title" [tabIcon]="tab.icon"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,63 @@
+<ion-header no-shadow>
+  <ion-navbar no-border color="transparent">
+    <ion-title class="align-center"><img src="assets/images/logo_deep_pink_s.png" class="vertical-center"/></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="background-page">
+  <ion-slides (ionSlideWillChange)="onSlideChangeStart($event)" (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let posts of postsList; let i = index">
+      <div *ngIf="i >= (slides.getActiveIndex()-1) && i <= (slides.getActiveIndex()+1)">
+        <div class="bg_img">
+          <img [src]="getBackgroundSrc(posts.backgroundSeq)" class="opacity"/>
+        </div>
+        <div class="view_content align-center">
+
+          <p class="opacity_08 font-23 user_info">{{posts?.dateCreated}} 
+            <img src="assets/images/ic_position.png"/>{{posts?.distance}}km 이내<br/>
+            {{posts?.aboutWriter}}
+          </p>
+
+          <h1 class="font-35">{{posts?.title}}</h1>
+
+          <h2 ion-text class="font-m font-bold" color="pink">어떤 상황이었냐면...</h2>
+
+          <p class="font-m mg-btm-8">{{posts?.situations}}</p>
+
+          <h2 ion-text class="font-m font-bold" color="pink">그때 무슨 생각을 했냐면...</h2>
+
+          <p class="font-m">{{posts?.thoughts}}</p>
+        </div>
+        <ion-footer>
+          <ion-toolbar class="btm_btn" color="transparent">
+            <ion-row class="pd-left-5">
+              <ion-col width-25 class="align-left">
+                <a class="bottom_icon" [hidden]="posts.isRecomm" (click)="recomm(i)">
+                  <img src="assets/images/ic_sympathy.png" class="vertical-center"/>
+                  <span class="font-m white opacity_08 vertical-center">{{posts?.recommTotal}}</span>
+                </a>
+
+                <a class="bottom_icon" [hidden]="!posts.isRecomm" (click)="cancelRecomm(i)">
+                  <img src="assets/images/ic_sympathy_pink.png" class="vertical-center"/>
+                  <span class="font-m white opacity_08 vertical-center">{{posts?.recommTotal}}</span>
+                </a>
+
+              </ion-col>
+              <ion-col width-25 class="align-left">
+                <a class="bottom_icon" (click)="goToCommentList(posts?.id)">
+                  <img src="assets/images/ic_comment.png" class="vertical-center"/>
+                  <span class="font-m white opacity_08 vertical-center">{{posts?.commentTotal}}</span>
+                </a>
+              </ion-col>
+              <ion-col width-25 offset-25>
+                <a class="bottom_icon pd-0" (click)="moreActionSheet(posts?.id, posts?.isOwner)">
+                  <img src="assets/images/ic_more.png" class="pd-0 vertical-center more"/>
+                </a>
+              </ion-col>
+            </ion-row>
+          </ion-toolbar>
+        </ion-footer>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

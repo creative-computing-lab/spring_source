@@ -1,0 +1,31 @@
+<ion-content padding class="align-center change_checkmood">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 ion-text color="dark" class="font-l">새로운 생각 후 바뀐 감정은?</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- checkmood.html -->
+        <img [hidden]="!(moodValue < 33)" src="assets/images/ic_mood3.png" class="mood_icon"/>
+        <img [hidden]="!(moodValue >= 33 && moodValue < 66)" src="assets/images/ic_mood1.png" class="mood_icon"/>
+        <img [hidden]="!(moodValue >= 66)" src="assets/images/ic_mood2.png" class="mood_icon"/>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-range [(ngModel)]="moodValue" min="0" max="100">
+          <ion-label range-left class="font-m" color="dark">나빠요</ion-label>
+          <ion-label range-right class="font-m" color="dark">좋아요</ion-label>
+        </ion-range>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <div class="align-right">
+    <button ion-button color="sub" class="btn-clear-style" clear (click)="dismiss()">돌아가기</button>
+    <button ion-button color="sub" class="btn-clear-style" clear (click)="openThankYouNoteModal()">완료하기</button>
+  </div>
+
+</ion-content>

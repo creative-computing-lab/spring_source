@@ -1,0 +1,33 @@
+<!--
+  Generated template for the CommentDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="basics">
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row class="comment-detail-text">
+      <ion-col>
+        {{comment.body}}
+        <!--그렇지만 정말로 바빴던거 아닐까요?<br/>
+        너무 안좋게만 생각하지 말아요!<br/>
+        아마 다른 안좋은 생각에 빠져 있다가<br/>당신에게 별 의미없이 그렇게 행동한 것일 수도 있어 보여요!^-^ 기운내요!</p>
+-->
+        <!--<button ion-button color="basics" class="btn-style3 bud_btn">새싹주기</button>-->
+        <!-- 땡큐노트가 작성되지 않은 채택한 댓글을 클릭할 경우
+         <button ion-button color="sub" class="btn-style3 thank_you_btn">땡큐노트 보내기</button>
+        -->
+        <button *ngIf="comment.sprout=='able'" ion-button color="basics" class="btn-style3 bud_btn" (click)="openThinkChangeModal(comment.id)">새싹주기</button>
+        <button *ngIf="comment.sprout=='able-thankyounote'" ion-button color="sub" class="btn-style3 thank_you_btn" (click)="goToNoteWrite()">땡큐노트 보내기</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,93 @@
+page-description {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .scroll-content {
+      overflow-y: hidden!important;
+  }
+}
+.description_content {
+  @extend .text_content;
+  padding-top: 19%;
+  @include media("(max-width: 768px)") {
+    padding-top: 17%;
+  }
+  @include media("(max-width: 640px)") {
+    padding-top: 16%;
+  }
+  @include media("(max-width: 480px)") {
+    padding-top: 16%;
+  }
+  .top_text, .btm_text {
+    margin-top:10%;
+    margin-bottom:13%;
+    @include media("(max-width: 768px)") {
+      margin-top:7%;
+      margin-bottom:9%;
+    }
+    @include media("(max-width: 640px)") {
+      margin-top:9%;
+      margin-bottom:10%;
+    }
+    @include media("(max-width: 480px)") {
+      margin-top:5%;
+      margin-bottom:8%;
+    }
+  }
+  .btm_text {
+    img {
+      width:16.4%;
+    }
+  }
+  h1 {
+  @include media("(max-width: 640px)") {
+    margin:0px;
+  }
+    img {
+      width:27.2%;
+    }
+  }
+  .ci_info {
+    width:77.8%;
+  }
+  .info {
+    margin-top:10%;
+  }
+  .check {
+    margin-top: 5%;
+    float:right;
+    width:40%;
+    background-color:transparent;
+    color:#fff;
+    @include media("(max-width: 480px)") {
+      width:45%;
+    }
+    @include media("(max-width: 360px)") {
+      width:50%;
+    }
+    ion-checkbox {
+      margin:2% 7% 2% 0%!important;
+    }
+    .checkbox-icon {
+      background-color: transparent;
+      border: 1px solid #fff;
+    }
+    .item-inner{
+      border:0px;
+      font-size: 2.4em;
+      letter-spacing: -1px;
+      @include media("(max-width: 768px)") {
+        font-size:1.5em!important;
+      }
+      @include media("(max-width: 640px)") {
+        font-size:1.2em!important;
+      }
+      @include media("(max-width: 480px)") {
+        font-size:1em!important;
+      }
+      @include media("(max-width: 360px)") {
+        font-size:0.8em!important;
+      }
+    }
+  }
+}

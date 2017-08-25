@@ -1,0 +1,18 @@
+.navbar {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #ddd;
+}
+.navbar-header a {
+  color:#ff6675;
+  font-size:26px;
+  font-weight:bold;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #fff;
+  border-bottom: 2px solid #888;
+}
+.navbar-fixed-top {
+  border: 0;
+}
+

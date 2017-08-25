@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Set page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="basics">
+    <ion-title class="align-center">설정</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list class="set_list">
+    <button ion-item  class="font-26 pd-0" (click)="goToPwChange()">
+      비밀번호 변경
+    </button>
+    <button ion-item  class="font-26 pd-0" (click)="logout()">
+      로그아웃
+    </button>
+    <ion-item>
+      <ion-label  class="pd-0"> 알림설정</ion-label>
+      <ion-toggle color="basics" [(ngModel)]="isAgreeSend" (ngModelChange)="changeIsAgreeSend()" [disabled]="disabledIsAgree" ></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

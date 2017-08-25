@@ -1,0 +1,598 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:        #000;
+$background-color:  #fff;
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+
+$colors: (
+  primary:    #333,
+  secondary:  #32db64,
+  danger:     #f66464,
+  light:      #f4f4f4,
+  black:       #000,
+  dark:       #4b4b4b,
+  favorite:   #69BB7B,
+  white:      #FFF,
+  default:    #FFF,
+  basics:     #ff6675,
+  sub:        #68bdd1,
+  pink:       #faa9b0,
+  deep_gray:  #999,
+  gray1:  #959595,
+  gray:       #ccc,
+  transparent: transparent
+);
+
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+@mixin media($queryString) {
+    @media #{$queryString} {
+      @content;
+    }
+}
+
+// common
+.header_transparent {
+  .scroll-content {
+    margin:0%!important;
+  }
+}
+// font style
+
+.font-s {
+  font-size: 1.7em!important;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size:1.2em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:0.9em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:0.8em!important;
+  }
+ }
+ .font-2 {
+   font-size: 2em!important;
+   letter-spacing: -1px;
+   @include media("(max-width: 768px)") {
+     font-size:1.3em!important;
+   }
+   @include media("(max-width: 640px)") {
+     font-size:1.1em!important;
+   }
+   @include media("(max-width: 480px)") {
+     font-size:0.8em!important;
+   }
+   @include media("(max-width: 360px)") {
+     font-size:0.7em!important;
+     letter-spacing: normal!important;
+   }
+  }
+.font-23 {
+  font-size: 2.3em!important;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size:1.4em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.2em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:0.9em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:0.8em!important;
+    letter-spacing: normal!important;
+  }
+ }
+ .font-25 {
+   font-size: 2.5em!important;
+   letter-spacing: -1px;
+   @include media("(max-width: 768px)") {
+     font-size:1.8em!important;
+   }
+   @include media("(max-width: 640px)") {
+     font-size:1.5em!important;
+   }
+   @include media("(max-width: 480px)") {
+     font-size:1em!important;
+   }
+   @include media("(max-width: 360px)") {
+     font-size:0.9em!important;
+   }
+  }
+  .font-26 {
+     font-size: 2.6em!important;
+     letter-spacing: -1px;
+     @include media("(max-width: 768px)") {
+       font-size:1.9em!important;
+     }
+     @include media("(max-width: 640px)") {
+       font-size:1.6em!important;
+     }
+     @include media("(max-width: 480px)") {
+       font-size:1.3em!important;
+     }
+     @include media("(max-width: 360px)") {
+       font-size:1.1em!important;
+     }
+    }
+.font-m {
+  font-size: 2.7em;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size:1.8em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.6em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:0.8em!important;
+    letter-spacing: normal!important;
+  }
+ }
+.font-l {
+  font-size:3.2em;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size:2.1em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.7em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1.4em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:1.1em!important;
+    letter-spacing: normal!important;
+  }
+}
+.font-35 {
+  font-size: 3.5em;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size: 2.8em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size: 2.3em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size: 1.9em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size: 1.5em!important;
+  }
+}
+.font-45 {
+  font-size: 4.5em;
+  letter-spacing: -1px;
+  @include media("(max-width: 768px)") {
+    font-size: 2.9em;
+  }
+  @include media("(max-width: 640px)") {
+    font-size: 2.5em;
+  }
+  @include media("(max-width: 480px)") {
+    font-size: 2em;
+  }
+  @include media("(max-width: 360px)") {
+    font-size: 1.8em;
+    letter-spacing: normal!important;
+  }
+}
+.gray {
+  color:#cacdcf;
+}
+.background {
+  background-color: #f9f8f8!important;
+}
+.white {
+  color:#fff!important;
+}
+.bg-white{
+background-color:#fff!important;
+}
+.font-bold {
+  font-weight:bold!important;
+}
+.overflow-none {
+  text-overflow: string!important;
+  white-space:normal!important;
+}
+.overflow {
+  width:100%;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap;
+}
+
+// padding
+.pd-0 {
+  padding:0px!important;
+}
+.pd-left-0{
+  padding-left:0px;
+}
+.pd-right-0{
+  padding-right:0px;
+}
+.pd-top-5 {
+  padding-top:5%!important;
+}
+.pd-left-1 {
+  padding-left:1%;
+}
+.pd-left-5 {
+  padding-left:5%!important;
+}
+.pd-right-1 {
+  padding-right:1%;
+}
+// margin
+.mg-0 {
+  margin:0px!important;
+}
+.mg-btm-0 {
+  margin-bottom:0px!important;
+}
+.mg-btm-3 {
+  margin-bottom:3%!important;
+
+}
+.mg-btm-6 {
+  margin-bottom:6%!important;
+}
+.mg-btm-8 {
+  margin-bottom:8%!important;
+}
+.mg-right-2 {
+  margin-right:2%!important;
+}
+.mg-right-3 {
+  margin-right:3%!important;
+}
+.mg-right-4 {
+  margin-right:4%!important;
+}
+.mg-left-2 {
+  margin-left:2%!important;
+}
+.mg-left-3 {
+  margin-left:3%!important;
+}
+.mg-top-46 {
+  margin-top:46%!important;
+}
+.mg-top-5 {
+  margin-top:5%!important;
+}
+.mg-top-6 {
+  margin-top:6%!important;
+}
+.mg-top-10 {
+  margin-top:10%!important;
+}
+.mg-top-15 {
+  margin-top:15%!important;
+}
+.mg-top-4 {
+  margin-top:4%!important;
+   @include media("(max-width: 480px)") {
+         margin-top:3%!important;
+        }
+}
+// align
+.align-center {
+  text-align:center;
+}
+.align-left {
+  text-align:left;
+}
+.align-right {
+  text-align:right!important;
+}
+.center {
+  margin:0 auto;
+}
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+.vertical-center {
+  vertical-align: middle!important;
+}
+// border
+.border {
+  border:1px solid #ccc;
+}
+.border-0 {
+  border:0px!important;
+}
+.border-top-0 {
+  border-top:0px!important;
+}
+.border-btm-0 {
+  border-bottom:0px!important;
+}
+.border-left-0 {
+  border-left:0px;
+}
+.border-right-0 {
+  border-right:0px;
+}
+.border-top {
+  border-top:1px solid #ddd!important;
+}
+.border-btm {
+  border-bottom:1px solid #ddd!important;
+}
+.header-ios .toolbar-background-ios {
+  border:0px!important;
+}
+// button style
+.btn-clear-style{
+ font-size:2.7em!important;
+  @include media("(max-width: 768px)") {
+    font-size:1.8em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.6em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1.2em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:0.9em!important;
+  }
+}
+.btn-style2 {
+  font-size:2.7em!important;
+  padding:7% 3%!important;
+  border-radius:6px!important;
+  @include media("(max-width: 768px)") {
+    font-size:1.8em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.6em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1.2em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:0.9em!important;
+  }
+}
+.btn-style1 {
+  font-size:2.9em!important;
+  padding:5% 9.8%!important;
+  border-radius:6px!important;
+  @include media("(max-width: 768px)") {
+    font-size:2em!important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size:1.6em!important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1.3em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:1em!important;
+  }
+}
+.btn-style-s {
+  font-size: 1.8em !important;
+  padding: 3.5% 5.5% !important;
+  border-radius:6px!important;
+  @include media("(max-width: 768px)") {
+    font-size: 1.6em !important;
+    padding: 3.5% 8% !important;
+  }
+  @include media("(max-width: 640px)") {
+    font-size: 1.2em !important;
+  }
+  @include media("(max-width: 480px)") {
+    font-size:1.1em!important;
+  }
+  @include media("(max-width: 360px)") {
+    font-size:1em!important;
+  }
+  @include media("(max-width: 320px)") {
+    font-size:0.8em!important;
+  }
+}
+.btn-style3 {
+  @extend .btn-style2;
+  padding:7% 8%!important;
+  border-radius:0px!important;
+}
+// layout
+
+.textfield_style {
+  padding:2%;
+  width:100%;
+  background-color:#f8f8f8;
+  box-shadow:2px 1px 2px 1px #ddd inset;
+  border:0px;
+  color:#4b4b4b;
+}
+.background-page {
+  .bg_img {
+    position: absolute;
+    text-align: center;
+    background-color:#333;
+    padding:0px!important;
+    width:100%;
+  }
+  .bg_img img {
+    width:100%;
+  }
+  .text_content {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+}
+.input_style {
+  padding: 1% 13.5%;
+  ion-item {
+    background-color:transparent!important;
+  }
+  ion-select {
+    color:#fff!important;
+    max-width:80%!important;
+  }
+}
+.opacity {
+  opacity:0.5;
+}
+.opacity_08 {
+  opacity:0.8;
+}
+.width-40 {
+  width:40%!important;
+}
+.segment_style {
+  min-height: 0px!important;
+  padding: 0px!important;
+}
+.popover-content {
+  top: 30%!important;
+  left: 10%!important;
+  bottom: 26%!important;
+}
+.more-popover {
+  .popover-content {
+    bottom: 35%!important;
+    @include media("(max-width: 768px)") {
+      bottom:  50.5% !important
+    }
+    @include media("(max-width: 640px)") {
+      bottom: 36%!important;
+    }
+    @include media("(max-width: 414px)") {
+      bottom: 35%!important;
+    }
+    @include media("(max-width: 412px)") {
+      bottom: 36%!important;
+    }
+    @include media("(max-width: 375px)") {
+      bottom: 32%!important;
+    }
+    @include media("(max-width: 360px)") {
+      bottom: 36%!important;
+    }
+    @include media("(max-width: 320px)") {
+      bottom: 26%!important;
+    }
+  }
+}
+.modal_top {
+  padding-top:11%!important;
+  @include media("(max-width: 768px)") {
+    padding-top:6%!important;
+  }
+  @include media("(max-width: 412px)") {
+    padding-top:11%!important;
+  }
+  @include media("(max-width: 414px)") {
+    padding-top:12%!important;
+  }
+  @include media("(max-width: 375px)") {
+    padding-top:13%!important;
+  }
+  @include media("(max-width: 360px)") {
+    padding-top:12%!important;
+  }
+  @include media("(max-width: 320px)") {
+    padding-top:15%!important;
+  }
+}
+
+// ,comment, general-mypage, adviser-mypage 由ъ뒪���놁쓣 寃쎌슦
+.no-comment {
+  padding-top: 40%;
+  ion-icon {
+    font-size:5em;
+    @include media("(max-width: 768px)") {
+      font-size:5em!important;
+    }
+    @include media("(max-width: 640px)") {
+      font-size:3em!important;
+    }
+    @include media("(max-width: 320px)") {
+     font-size:2.5em!important;
+    }
+  }
+  h2 {
+    margin-top:2%;
+  }
+}

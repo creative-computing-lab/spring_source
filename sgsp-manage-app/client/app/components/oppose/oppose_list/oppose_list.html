@@ -1,0 +1,29 @@
+<h2 class="sub-header">부적절한 글 관리</h2>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>포스트 제목</th>
+                <th>글쓴이</th>
+                <th>갯수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-if="listData.total <= 0">
+                <td colspan="4">조회결과가 없습니다.</td>
+            </tr>
+            <tr ng-repeat="item in listData.list" style="cursor:pointer;" ng-click="_go(item.postsId)">
+                <td>{{item.postsId}}</td>
+                <td>{{item.postsTitle}}</td>
+                <td>{{item.ownerName}}</td>
+                <td>{{item.opposeTotal}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="pagination right">
+    <div uib-pagination ng-if="listData.total>paging.max" total-items="listData.total" ng-model="paging.index" items-per-page="paging.max"
+        ng-change="_onPageChanged()"></div>
+</div>

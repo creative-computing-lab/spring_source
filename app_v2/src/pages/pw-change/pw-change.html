@@ -1,0 +1,54 @@
+<!--
+  Generated template for the PwChange page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="transparent">
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="background-page header_transparent">
+  <div class="bg_img">
+    <img src="assets/images/bg2_.png" class="opacity"/>
+  </div>
+  <div class="pw_change_content">
+    <h1><img src="assets/images/logo_white.png"/></h1>
+
+    <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()">
+      <ion-list class="input_style1">
+        <ion-item class="pd-0">
+          <ion-input type="password" placeholder="현재비밀번호" maxlength="4" class="white"
+                    formControlName="current"></ion-input>
+        </ion-item>
+        <div *ngIf="current.dirty && !current.valid" class="error_content font-s">
+          <span *ngIf="current.errors.required"  color="danger">  <ion-icon name="alert"></ion-icon> '현재 비밀번호'는 필수 입력 사항입니다.</span><br/>
+          <span *ngIf="current.errors.number"  color="danger">  <ion-icon name="alert"></ion-icon> 패스워드는 4자리 숫자로만 구성되어야 합니다.</span>
+        </div>
+
+        <ion-item class="pd-0">
+          <ion-input type="password" placeholder="변경 비밀번호" maxlength="4" class="white"
+                    formControlName="new" equalTo="cNew" reverse="true"></ion-input>
+        </ion-item>
+        <div *ngIf="new.dirty && !new.valid" class="error_content font-s">
+          <span *ngIf="new.errors.required"  color="danger"> <ion-icon name="alert"></ion-icon> '변경 비밀번호'는 필수 입력 사항입니다.</span><br/>
+          <span *ngIf="new.errors.number"  color="danger">  <ion-icon name="alert"></ion-icon> 패스워드는 4자리 숫자로만 구성되어야 합니다.</span>
+        </div>
+
+        <ion-item class="pd-0">
+          <ion-input type="password" placeholder="비밀번호 확인" maxlength="4" class="white"
+                    formControlName="cNew" equalTo="new" reverse="false"></ion-input>
+        </ion-item>
+        <div *ngIf="cNew.dirty && !cNew.valid" class="error_content font-s">
+          <span *ngIf="cNew.errors"  color="danger">  <ion-icon name="alert"></ion-icon> 입력하신 두 개의 비밀번호가 일치하지 않습니다.</span>
+        </div>
+
+      </ion-list>
+      <div class="mg-top-6">
+        <button ion-button color="basics" class="btn-style1" type="submit">변경하기</button>
+      </div>
+    </form>
+</div>
+
+</ion-content>

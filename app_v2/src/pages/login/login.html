@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow>
+  <ion-navbar no-border color="transparent">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="background-page header_transparent">
+  <div class="bg_img">
+    <img src="assets/images/bg.png" class="opacity"/>
+  </div>
+  <div class="login_content">
+    <h1><img src="assets/images/logo_white.png"/></h1>
+    <ion-list class="input_style1">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <ion-item class="pd-0">
+          <ion-input name="username" formControlName="username" type="text" placeholder="아이디" class="font-m white"></ion-input>
+        </ion-item>
+
+        <div *ngIf="username.dirty && !username.valid" class="error_content font-s">
+          <span *ngIf="username.errors.required" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span><br/>
+          <span *ngIf="username.errors.id" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            아이디는 영문 및 숫자, 특수문자 조합 4자리 이상이어야 합니다.
+          </span><br/>
+          <span *ngIf="username.errors.maxLength" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            최대 길이를 초과하였습니다.
+          </span>
+        </div>
+
+
+        <ion-item class="pd-0">
+          <ion-input ion-text name="pwd" formControlName="pwd" type="password" maxlength="4" placeholder="네 자리 비밀번호" class="font-m white"></ion-input>
+        </ion-item>
+
+        <div *ngIf="pwd.dirty && !pwd.valid" class="error_content font-s">
+          <span *ngIf="pwd.errors.required" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            필수 입력 사항입니다.
+          </span><br/>
+          <span *ngIf="pwd.errors.maxLength" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            최대 길이를 초과하였습니다.
+          </span><br/>
+          <span *ngIf="pwd.errors.number" ion-text color="danger">
+            <ion-icon name="alert"></ion-icon>
+            패스워드는 4자리 숫자로만 구성되어야 합니다.
+          </span>
+        </div>
+        <button ion-button block color="sub" class="btn-style2 mg-top-15"  (click)="login()">시작하기</button>
+      </form>
+    </ion-list>
+    <div class="login-btm">
+      <button ion-button block color="gray"  class="btn-style2 white "
+              (click)="goToUserselection()">회원가입
+      </button>
+    </div>
+    <span class="font-25">비밀번호를 잊으셨나요?<button ion-button color="light" clear class="vertical-center"(click)="goToPwFind()">비밀번호찾기</button></span>
+  </div>
+</ion-content>

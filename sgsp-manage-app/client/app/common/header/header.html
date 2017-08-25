@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand pink" href=""><i>Spring</i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav">
+        <li data-ui-sref-active='active'><a data-ui-sref="user_list">사용자 관리</a></li>
+        <li data-ui-sref-active='active'><a data-ui-sref="push_list">Push 관리</a></li>
+        <li data-ui-sref-active='active'><a data-ui-sref="oppose_list">부적절한 글 관리</a></li>
+        <li data-ui-sref-active='active'><a data-ui-sref="recomcode_list">추천인 인증코드</a></li>
+        <li data-ui-sref-active='active'><a data-ui-sref="mood_list">감정통계</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="sub-color" href="" data-ui-sref="chgpwd"><span class="glyphicon glyphicon-user"></span>
+        {{username}}</a>
+        </li>
+        <li><a href="" ng-click="_logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- //header -->

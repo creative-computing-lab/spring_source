@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "787976944657",
+    "firebase_url": "https://spring-91d52.firebaseio.com",
+    "project_id": "spring-91d52",
+    "storage_bucket": "spring-91d52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787976944657:android:164b39647126362f",
+        "android_client_info": {
+          "package_name": "kr.ac.sogang.spring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787976944657-cgprmpkltfmrs7qq2c161653hlaqcn6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaw_UKg8y_0rUq6IcPJf1tAjm5Td5mskw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

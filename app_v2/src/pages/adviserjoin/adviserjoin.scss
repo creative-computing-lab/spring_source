@@ -1,0 +1,59 @@
+page-adviserjoin {
+  .header-md::after {
+    background-image:none!important;
+  }
+  .item-md.item-input.input-has-focus .item-inner, .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: #68bdd1!important;
+    box-shadow: inset 0 -1px 0 0 #68bdd1!important;
+  }
+}
+.join_content_adviser {
+  @extend .join_content;
+  @include media("(max-width: 360px)") {
+    padding-top: 5%!important;
+    P {
+      margin-top: 3%!important;
+    }
+  }
+  @include media("(max-width: 480px)") {
+    P {
+      padding:1% 8%!important;
+    }
+  }
+  .input_style2 {
+    @extend .input_style;
+    @include media("(max-width: 480px)") {
+      padding:1% 8%!important;
+      margin-bottom:0px;
+    }
+    ion-item {
+      margin-top:1.5%!important;
+    }
+    .text-input-md {
+      margin: 4% 1% 3.5% 2%;
+      @include media("(max-width: 360px)") {
+        margin: 0%!important;
+      }
+    }
+    ion-label {
+      margin: 3% 0% 3% 1.2%!important;
+      color:#999999;
+      @include media("(max-width: 360px)") {
+        margin: 0%!important;
+      }
+    }
+    ion-datetime {
+      padding:3% 1.2% 3% 1.2% !important;
+      @include media("(max-width: 360px)") {
+        margin: 0%!important;
+      }
+      color:#fff!important;
+    }
+    ion-select {
+      padding:2% 1.2% 2.8% 0% !important;
+      @include media("(max-width: 360px)") {
+        margin: 0%!important;
+      }
+    }
+  }
+}

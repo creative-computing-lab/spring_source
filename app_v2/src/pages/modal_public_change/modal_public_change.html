@@ -1,0 +1,28 @@
+<!-- 비공개 -->
+<ion-content *ngIf="isPrivate" padding class="basic_modal modal_top">
+  <button ion-button block color="gray" (click)="privatePublicChange(false)">공개하기</button>
+  <button ion-button block color="gray" (click)="delete()">삭제하기</button>
+  <button ion-button block color="basics" class="mg-top-10" (click)="dismiss()">취소</button>
+</ion-content>
+
+<!-- 공개 & 새싹X & 땡큐X -->
+<ion-content *ngIf="!isPrivate && !isSprout" padding class="basic_modal modal_top">
+  <button ion-button block color="gray" (click)="privatePublicChange(true)">나만보기</button>
+  <button ion-button block color="gray" (click)="delete()">삭제하기</button>
+  <button ion-button block color="basics" class="mg-top-10" (click)="dismiss()">취소</button>
+</ion-content>
+
+<!-- 공개 & 새싹O & 땡큐X -->
+<ion-content *ngIf="!isPrivate && isSprout && !isSentThankYouNote" padding class="basic_modal">
+  <button ion-button block color="gray" (click)="privatePublicChange(true)">나만보기</button>
+  <button ion-button block color="gray" (click)="sendThankYouNote()">땡큐노트 보내기</button>
+  <button ion-button block color="gray" (click)="delete()">삭제하기</button>
+  <button ion-button block color="basics" class="mg-top-10" (click)="dismiss()">취소</button>
+</ion-content>
+
+<!-- 공개 & 새싹O & 땡큐O -->
+<ion-content *ngIf="!isPrivate && isSprout &&  isSentThankYouNote" padding class="basic_modal modal_top">
+  <button ion-button block color="gray" (click)="privatePublicChange(true)">나만보기</button>
+  <button ion-button block color="gray" (click)="delete()">삭제하기</button>
+  <button ion-button block color="basics" class="mg-top-10" (click)="dismiss()">취소</button>
+</ion-content>

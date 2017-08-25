@@ -1,0 +1,14 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "keystore/debug.keystore"
+    },
+    "release": {
+      "keystore": "keystore/spring.jks",
+      "storePassword": "R2017x405!",
+      "alias": "spring",
+      "password" : "R2017x405!",
+      "keystoreType": ""
+    }
+  }
+}

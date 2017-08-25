@@ -1,0 +1,43 @@
+page-set {
+  .list-md {
+    border-bottom: 1px solid #ddd!important;
+  }
+}
+.set_list {
+  .item-inner {
+    padding-left:5%!important;
+    color:#959595;
+  }
+  ion-item {
+    padding-left: 0px!important;
+    ion-label{
+      font-size: 2.5em!important;
+      color:#959595;
+     letter-spacing: -1px;
+     @include media("(max-width: 768px)") {
+       font-size:1.6em!important;
+     }
+     @include media("(max-width: 640px)") {
+       font-size:1.5em!important;
+     }
+     @include media("(max-width: 480px)") {
+       font-size:1.2em!important;
+     }
+      @include media("(max-width: 414px)") {
+       font-size:1.1em!important;
+     }
+       @include media("(max-width: 412px)") {
+       font-size:1.2em!important;
+     }
+      @include media("(max-width: 375px)") {
+       font-size:1.1em!important;
+     }
+     @include media("(max-width: 360px)") {
+       font-size:1em!important;
+     }
+      @include media("(max-width: 320px)") {
+       font-size:0.9em!important;
+     }
+    }
+  }
+}

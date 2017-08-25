@@ -1,0 +1,142 @@
+<!--
+  Generated template for the AdviserMypage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="white">
+    <ion-title class="align-center"><img src="assets/images/logo_deep_pink_s.png" class="vertical-center"/></ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only color="transparent">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToSet()">
+        <ion-icon name="settings" color="gray"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="bg-white adviser_mypage_content">
+    <ion-grid>
+      <ion-row>
+        <ion-col offset-20 width-20 class="align-center"><p class="font-23">도움준 글<br/><b>{{postsCount}}</b></p></ion-col>
+        <ion-col width-20 class="align-center"><p class="font-23">채택된 댓글<br/><b>{{sproutCount}}</b></p></ion-col>
+        <ion-col width-20 class="align-center"><p class="font-23">새싹 수<br/><b>{{sproutCount}}</b></p></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-toolbar color="white" class="segment_style2">
+      <ion-segment [(ngModel)]="adviserMypage" color="dark" (ionChange)="onChangeSegment()">
+        <ion-segment-button value="my_story">
+          <span class="font-m">도움준 이야기</span>
+        </ion-segment-button>
+        <ion-segment-button value="adviser_news">
+          <span class="font-m">새소식</span>
+        </ion-segment-button>
+        <ion-segment-button value="receive_thankyou_note">
+          <span class="font-m"> 땡큐노트</span>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </div>
+</ion-header>
+<ion-content no-padding class=" align-center background">
+  <div [ngSwitch]="adviserMypage" class="background card-pd1">
+    <div *ngSwitchCase="'my_story'">
+      <ion-card class="story_content" *ngFor="let posts of postsData.list">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon item-left>
+              <img *ngIf="posts.isSprout == true" src="assets/images/ic_bud_green.png"/>
+              <img *ngIf="posts.isSprout == false" src="assets/images/ic_bud_gray.png"/><br/>
+              <img *ngIf="posts.isSentThankNote == true" src="assets/images/ic_send.png"/>
+              <img *ngIf="posts.isSentThankNote == false" src="assets/images/ic_no_send.png"/>
+            </ion-icon>
+            <h2 ion-text [ngClass]="(posts.isPrivate)?'private_post':'public_post'"># {{posts.categoryName}}</h2>
+            <!-- storyboard not defiened <h3 class="font-25 font-bold" color="dark">우울, 침울, 화남</h3> -->
+            <p ion-text [ngClass]="(posts.isPrivate)?'private_post_sub':'public_post_sub'" (click)="goToFeed(posts.id)">{{posts.title}}<br/>
+              {{posts.situations}}</p>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <button ion-button clear full class="font-1" *ngIf="postsData.total != postsData.list.length" (click)="getPosts(postsData.list.length)">
+        <p ion-text color="gray">더보기</p><ion-icon name="arrow-down"></ion-icon>
+      </button>
+      <ion-grid *ngIf="postsData.total==0">
+        <ion-row>
+          <ion-col class="align-center no-comment">
+            <!-- <img src="assets/images/logo_gray.png"> -->
+            <ion-icon name="alert" color="gray"></ion-icon>
+            <h2 ion-text class="font-m" color="gray1">도와준 이야기가 없습니다.</h2>
+            <!-- <p class="deep_gray font-m">첫 번째 댓글을 남겨주세요!</p> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-list *ngSwitchCase="'adviser_news'" class="mypage_list_content">
+      <ion-item color="transparent" *ngFor="let news of newsData">
+        <ion-icon item-left>
+          <img *ngIf="news.isRead" src="assets/images/ic_bud_check.png"/>
+          <img *ngIf="!news.isRead" src="assets/images/ic_bud_unconfirmed.png"/>
+        </ion-icon>
+        <div *ngIf="!news.isRead">
+          <h2 ion-text class="font-25  overflow" color="black" (click)="goToNewsFeed(news.id, news.postsId, news.type)">{{news.title}}</h2>
+          <span ion-text class="right align-right font-2" color="deep_gray">{{news.dateCreated}}</span>
+          <p ion-text class="font-23 overflow" color="dark" (click)="goToNewsFeed(news.id, news.postsId, news.type)">{{news.body}}</p>
+        </div>
+        <div *ngIf="news.isRead">
+          <h2 ion-text class="font-25  overflow" color="gray1" (click)="goToNewsFeed(news.id, news.postsId, news.type)">{{news.title}}</h2>
+          <span ion-text class="right align-right font-2" color="gray1">{{news.dateCreated}}</span>
+          <p ion-text class="font-23 overflow" color="gray1" (click)="goToNewsFeed(news.id, news.postsId, news.type)">{{news.body}}</p>
+        </div>
+      </ion-item>
+      <button ion-button clear full class="font-1" *ngIf="newsDataTotal != newsData.length" (click)="getNews(newsData.length)">
+        <p ion-text color="gray">더보기</p><ion-icon name="arrow-down"></ion-icon>
+      </button>
+      <ion-grid *ngIf="newsData.length==0">
+        <ion-row>
+          <ion-col class="align-center no-comment">
+            <!-- <img src="assets/images/logo_gray.png"> -->
+            <ion-icon name="alert" color="gray"></ion-icon>
+            <h2 ion-text class="font-m" color="gray1">새 소식이 없습니다.</h2>
+            <!-- <p class="deep_gray font-m">첫 번째 댓글을 남겨주세요!</p> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-list *ngSwitchCase="'receive_thankyou_note'" class="mypage_list_content">
+      <ion-item color="transparent" (click)="goToNoteView(note.id)" *ngFor="let note of thankYouNoteList">
+        <ion-icon item-left>
+          <img *ngIf="!note.isRead" src="assets/images/ic_no_read.png"/>
+          <img *ngIf="note.isRead" src="assets/images/ic_read.png"/>
+        </ion-icon>
+        <div *ngIf="!note.isRead">
+          <h2 ion-text class="font-25 overflow" color="black">{{note.body}}</h2>
+          <span ion-text class="right align-right font-2"  color="deep_gray">{{note.dateCreated}}</span>
+          <p ion-text class="font-23 overflow" color="dark">{{note.body}}</p>
+        </div>
+        <div *ngIf="note.isRead">
+          <h2 ion-text class="font-25 overflow" color="gray1">{{note.body}}</h2>
+          <span ion-text class="right align-right font-2"  color="gray1">{{note.dateCreated}}</span>
+          <p ion-text class="font-23 overflow" color="gray1">{{note.body}}</p>
+        </div>
+      </ion-item>
+      <button ion-button clear full class="font-1" *ngIf="thankYouNoteTotal != thankYouNoteList.length" (click)="getThankYouNote(thankYouNoteList.length)">
+        <p ion-text color="gray">더보기</p><ion-icon name="arrow-down"></ion-icon>
+      </button>
+      <ion-grid *ngIf="thankYouNoteTotal==0">
+        <ion-row>
+          <ion-col class="align-center no-comment">
+            <!-- <img src="assets/images/logo_gray.png"> -->
+            <ion-icon name="alert" color="gray"></ion-icon>
+            <h2 ion-text class="font-m" color="gray1">땡큐 노트가 없습니다.</h2>
+            <!-- <p class="deep_gray font-m">첫 번째 댓글을 남겨주세요!</p> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+</ion-content>

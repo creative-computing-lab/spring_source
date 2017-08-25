@@ -1,0 +1,50 @@
+<h2 class="sub-header col-xs-7 pd-right-0 pd-left-0">감정 통계</h2>
+<form name="searchForm" novalidate ng-submit="_search()" class="mb10 col-xs-4 pd-0 search_name">
+  <div class="input-group col-xs-12 ">
+    <input type="text" class="form-control" name="ownerName" placeholder="사용자이름" ng-model="search.ownerName" required>
+    <span class="input-group-btn">
+      <button class="btn sub-btn" type="submit">검색</button>
+    </span>
+  </div>
+</form>
+<div class="col-xs-1 pd-0 align-right">
+  <button ng-csv="_getArray()" csv-header="_getHeader()" lazy-load="true" filename="download.csv" field-separator="," add-bom="true"
+          class="btn btn-pink">Download
+  </button>
+</div>
+
+
+<div class="table-responsive col-xs-12 pd-0">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>사용자 ID</th>
+      <th>포스트 제목</th>
+      <th>감정 값</th>
+      <th>생성일</th>
+      <th>도움준 상담자</th>
+      <th>채택된 댓글</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-if="listData.total <= 0">
+      <td colspan="7">조회결과가 없습니다.</td>
+    </tr>
+    <tr ng-repeat="item in listData.list" ng-click="_toKeyword(item.ownerName)" style="cursor: pointer">
+      <td>{{item.id}}</td>
+      <td>{{item.ownerName}}</td>
+      <td>{{item.postsTitle}}</td>
+      <td>{{item.moodValue}}</td>
+      <td>{{item.lastUpdated | date:'yyyy.MM.dd'}}</td>
+      <td>{{item.counselorName}}</td>
+      <td>{{item.commentBody}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="pagination right">
+  <div uib-pagination ng-if="listData.total>paging.max" total-items="listData.total" ng-model="paging.index"
+       items-per-page="paging.max"
+       ng-change="_onPageChanged()"></div>
+</div>
